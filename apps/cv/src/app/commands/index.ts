@@ -4,6 +4,11 @@ import { help } from './help';
 import { echo } from './echo';
 import { weather } from './weather';
 import { time } from './time';
+import { personal } from './personal';
+import { experience } from './experiance';
+import { projects } from './projects';
+import { education } from './education';
+import { stats } from './stats';
 
 export type Command = {
   run: CommandHandler;
@@ -16,4 +21,9 @@ export const commandsImpl: Record<string, Command> = {
   fetch,
   weather,
   time,
+  ...personal,
+  experience,
+  projects,
+  education,
+  stats,
 };

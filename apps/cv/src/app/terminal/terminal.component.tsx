@@ -21,7 +21,7 @@ export const TerminalComponent: FC = () => {
     historyIndex: null,
   });
 
-  const { history, commander } = useTerminal();
+  const { history, commander, echo } = useTerminal();
 
   const handleKeyDown = useCallback(
     async (e: KeyboardEvent) => {
@@ -94,17 +94,13 @@ export const TerminalComponent: FC = () => {
       } else if (key === 'Enter') {
         state.inputBlock = true;
         const command = state.command.trim();
-
-        if (command) {
-          await commander(`echo ${command}`, 'guest');
-        }
-
+        await echo(command, 'guest');
         state.command = ' ';
         state.cursor = 0;
         state.historyIndex = null;
 
         try {
-          if (command) await commander(command);
+          if (command) await commander(command, 'guest');
         } catch (e) {
           await commander(`echo Error: ${(e as Error).message}`);
         } finally {
@@ -112,7 +108,7 @@ export const TerminalComponent: FC = () => {
         }
       }
     },
-    [state, commander, history]
+    [state, history, echo, commander]
   );
 
   const handlePaste = useCallback(
