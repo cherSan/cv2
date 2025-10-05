@@ -14,7 +14,6 @@ type State = {
 export const TerminalComponent: FC = () => {
   const initialized = useRef(false);
 
-
   const state = useReactive<State>({
     command: ' ',
     cursor: 0,
@@ -156,6 +155,12 @@ export const TerminalComponent: FC = () => {
       await commander('echo ===============================', 'system');
     })();
   }, [commander]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }, 100);
+  }, [history]);
 
   return (
     <div className={styles.terminal}>

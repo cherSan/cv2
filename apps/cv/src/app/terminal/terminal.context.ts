@@ -7,7 +7,7 @@ export type Message = {
   date: Date;
 };
 
-export type CommandHandler = (user?: string, args?: string[]) => Promise<void> | void;
+export type CommandHandler = (args?: string[], user?: string) => Promise<void> | void;
 
 type Terminal = {
   history: Message[];
@@ -57,7 +57,7 @@ export const useTerminal = create<Terminal>((set, get) => ({
       const impl = commands[cmd];
       if (impl?.run) {
         try {
-          await impl.run(user, args);
+          await impl.run(args, user);
         } catch (err) {
           await store.echo('system', `Error executing "${cmd}": ${(err as Error).message}`);
         }

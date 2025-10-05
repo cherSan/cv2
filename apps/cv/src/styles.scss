@@ -7,7 +7,12 @@ body {
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: #121212;
-  color: #00ff00;
-  font-family: monospace;
+  font-family:
+    'Fira Code',            /* моноширина для кода */
+    'Segoe UI Emoji',       /* Windows emoji */
+    'Apple Color Emoji',    /* MacOS emoji */
+    'Noto Color Emoji',     /* Linux / Android */
+    'Twemoji Mozilla',      /* можно добавить кастомно */
+    monospace;
   font-size: 16px;
 }

@@ -1,5 +1,5 @@
 .symbol {
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
   width: 10px;
@@ -17,4 +17,7 @@
 }
 .warning {
   color: #ffff00;
+}
+.user {
+  color: #00ff00;
 }

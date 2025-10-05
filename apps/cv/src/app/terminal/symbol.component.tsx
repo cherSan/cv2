@@ -6,9 +6,11 @@ type Props = {
   children: string | undefined;
   active?: boolean;
   type: 'danger' | 'warning' | undefined;
+  isUser?: boolean;
 }
 
 export const Symbol: FC<Props> = ({
+  isUser = false,
   children,
   active,
   type,
@@ -17,12 +19,13 @@ export const Symbol: FC<Props> = ({
     s.symbol,
     { [s.active]: active },
     { [s.dangerous]: type === 'danger' },
-    { [s.warning]: type === 'warning' }
+    { [s.warning]: type === 'warning' },
+    { [s.user]: isUser },
   ])
 
   return (
-    <div className={className}>
+    <span className={className}>
       {children}
-    </div>
+    </span>
   )
 }

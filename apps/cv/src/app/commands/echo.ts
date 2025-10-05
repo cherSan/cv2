@@ -1,7 +1,7 @@
 import { useTerminal } from '../terminal/terminal.context';
 
 export const echo = {
-  run: async (user?: string, args?: string[]) => {
+  run: async (args?: string[], user?: string) => {
     const store = useTerminal.getState();
 
     if (!args) {

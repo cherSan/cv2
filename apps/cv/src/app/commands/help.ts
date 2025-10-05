@@ -2,16 +2,13 @@ import { useTerminal } from '../terminal/terminal.context';
 import { commandsImpl } from './index';
 
 export const help = {
-  run: async (user?: string, args?: string[]) => {
+  run: async (args?: string[]) => {
     const store = useTerminal.getState();
 
     if (!args?.length) {
-      await store.commander('echo Usage: help <command?>', 'system');
+      await store.commander('echo Usage: help [command]');
       await store.commander('echo Example: help echo')
-      await store.commander('echo Available commands:');
-      for (const cmd in commandsImpl) {
-        await store.commander(`echo - ${cmd}`);
-      }
+      await store.commander(`echo Available commands: help [${Object.keys(commandsImpl).join(' | ')}]`);
       return;
     }
 
@@ -19,13 +16,13 @@ export const help = {
     const impl = commandsImpl[cmd];
 
     if (!impl) {
-      await store.commander(`echo ❌ Command not found: ${cmd}`, 'system');
+      await store.commander(`echo ❌ Command not found: ${cmd}`);
       return;
     }
 
     const desc = impl.description || ['No description'];
-    desc.forEach(line => {
-      store.commander(`echo ${line}`, 'system');
+    desc.forEach((line, i) => {
+      store.commander(`echo ${line}`);
     });
   },
   description: [

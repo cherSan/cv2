@@ -1,35 +1,38 @@
 import { useTerminal } from '../terminal/terminal.context';
-// Пример использования: fetch -url=https://api.example.com/data -method=POST -body={"key":"value"}
+
 export const fetch = {
-  run: async (_user?: string, args?: string[]) => {
+  run: async (args?: string[]) => {
+    const term = useTerminal.getState();
+
     if (!args) {
-      await useTerminal
-        .getState()
-        .commander('echo ❌ Error: url is required', 'system');
+      await term.commander('echo ❌ Error: url is required', 'system');
       return;
     }
+
     const params: Record<string, string> = {};
     args.forEach((arg) => {
       const match = arg.match(/-(\w+)=(.*)/);
-      if (match) {
-        params[match[1]] = match[2];
-      }
+      if (match) params[match[1]] = match[2];
     });
 
     const url = params.url;
     if (!url) {
-      await useTerminal
-        .getState()
-        .commander('echo ❌ Error: url is required', 'system');
+      await term.commander('echo ❌ Error: url is required', 'system');
       return;
     }
 
     const method = (params.method || 'GET').toUpperCase();
-    const body = params.body ? JSON.parse(params.body) : undefined;
+    let body: any;
+    if (params.body) {
+      try {
+        body = JSON.parse(params.body);
+      } catch {
+        await term.commander('echo ❌ Error: invalid JSON body', 'system');
+        return;
+      }
+    }
 
-    await useTerminal
-      .getState()
-      .commander(`echo Fetching ${url} [${method}]...`, 'system');
+    await term.commander(`echo Fetching ${url} [${method}]...`, 'system');
 
     try {
       const res = await globalThis.fetch(url, {
@@ -38,23 +41,16 @@ export const fetch = {
         body: body ? JSON.stringify(body) : undefined,
       });
 
-      const resultText = await res.text(); // JSON или текст
-      const truncated =
-        resultText.length > 200 ? resultText.slice(0, 200) + '...' : resultText;
+      const text = await res.text();
+      const truncated = text.length > 200 ? text.slice(0, 200) + '...' : text;
 
       if (!res.ok) {
-        await useTerminal
-          .getState()
-          .commander(`echo ❌ HTTP ${res.status}: ${res.statusText}`, 'system');
+        await term.commander(`echo ❌ HTTP ${res.status}: ${res.statusText}`, 'system');
+      } else {
+        await term.commander(`echo ✅ Result: ${truncated}`, 'system');
       }
-
-      await useTerminal
-        .getState()
-        .commander(`echo ✅ Result: ${truncated}`, 'system');
     } catch (e: any) {
-      await useTerminal
-        .getState()
-        .commander(`echo ❌ Fetch error: ${e.message}`, 'system');
+      await term.commander(`echo ❌ Fetch error: ${e.message}`, 'system');
     }
   },
   description: [
