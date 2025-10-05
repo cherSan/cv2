@@ -1,0 +1,18 @@
+.terminal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.historyLine {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.command {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+

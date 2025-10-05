@@ -1,0 +1,20 @@
+.symbol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 20px;
+  color: #fff;
+}
+
+.active {
+  color: #000;
+  background: #fff;
+}
+
+.dangerous {
+  color: #ff0000;
+}
+.warning {
+  color: #ffff00;
+}

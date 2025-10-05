@@ -13,7 +13,7 @@
     ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
-  "nxCloudId": "68e135c157b1f655d9a64c57",
+  "nxCloudId": "68e13e9b058c4a1ed18acc37",
   "plugins": [
     {
       "plugin": "@nx/js/typescript",
@@ -54,15 +54,15 @@
     "@nx/react": {
       "application": {
         "babel": true,
-        "style": "tailwind",
+        "style": "scss",
         "linter": "eslint",
         "bundler": "vite"
       },
       "component": {
-        "style": "tailwind"
+        "style": "scss"
       },
       "library": {
-        "style": "tailwind",
+        "style": "scss",
         "linter": "eslint"
       }
     }
