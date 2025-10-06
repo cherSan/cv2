@@ -9,6 +9,9 @@ import { experience } from './experiance';
 import { projects } from './projects';
 import { education } from './education';
 import { stats } from './stats';
+import { games } from './gams';
+import { internet } from './internet';
+import { devtools } from './devtools';
 
 export type Command = {
   run: CommandHandler;
@@ -26,4 +29,7 @@ export const commandsImpl: Record<string, Command> = {
   projects,
   education,
   stats,
+  ...games,
+  ...internet,
+  ...devtools
 };
