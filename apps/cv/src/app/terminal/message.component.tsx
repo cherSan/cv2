@@ -14,8 +14,16 @@ export const Message: FC<Props> = ({ children, type, cursor, user }) => {
   const userPrefix = useMemo(() => (user ? `${user.padEnd(7, ' ')} > ` : ''), [user]);
   const prefixChars = useMemo(() => Array.from(userPrefix), [userPrefix]);
 
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(children);
+      console.log('Text copied successfully');
+    } catch (err) {
+      console.error('Failed to copy text: ', err);
+    }
+  };
   return (
-    <div className={styles.message}>
+    <div className={styles.message} onClick={handleCopy}>
       {prefixChars.map((v, i) => (
         <Symbol key={`prefix-${i}`} type={type} isUser={user === 'guest'}>
           {v}

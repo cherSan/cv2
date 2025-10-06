@@ -2,4 +2,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  user-select: all;
+  cursor: copy;
 }

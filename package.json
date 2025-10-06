@@ -2,7 +2,10 @@
   "name": "@cv/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:prod": "nx build cv --configuration=production",
+    "deploy:cv": "npx gh-pages -d apps/cv/dist"
+  },
   "private": true,
   "dependencies": {
     "ahooks": "^3.9.5",
@@ -37,6 +40,7 @@
     "eslint-plugin-jsx-a11y": "6.10.1",
     "eslint-plugin-react": "7.35.0",
     "eslint-plugin-react-hooks": "5.0.0",
+    "gh-pages": "^6.3.0",
     "jiti": "2.4.2",
     "jsdom": "~22.1.0",
     "nx": "21.6.3",
