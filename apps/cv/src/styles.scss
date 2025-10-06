@@ -2,9 +2,10 @@ body {
   margin: 0;
   padding: 0;
   max-width: 100dvw;
-  min-width: 100dvw;
+  width: calc(100dvw - 20px);
   min-height: 100dvh;
-  overflow-x: hidden;
+  overflow-x: auto;
+  min-width: 890px;
   overflow-y: scroll;
   background-color: #121212;
   font-family:
@@ -15,6 +16,7 @@ body {
     'Twemoji Mozilla',      /* можно добавить кастомно */
     monospace;
   font-size: 16px;
+  box-sizing: border-box;
 }
 
 .mobile-warning {
