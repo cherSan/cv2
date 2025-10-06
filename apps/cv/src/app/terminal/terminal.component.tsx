@@ -143,12 +143,39 @@ export const TerminalComponent: FC = () => {
     initialized.current = true;
 
     (async () => {
-      await commander('echo ===============================', 'system');
-      await commander('echo Aleksandr Chernushevich', 'system');
-      await commander('echo Developer', 'system');
-      await commander('echo Welcome to my personal terminal!', 'system');
-      await commander('echo Type "help" to see available commands.', 'system');
-      await commander('echo ===============================', 'system');
+      await commander('echo ╔════════════════════════════════════════════════════════════════════════════════╗', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ║   ██████╗ ███████╗██████╗ ███████╗ ██████╗ ███╗   ██╗ █████╗ ██╗               ║', 'system');
+      await commander('echo ║   ██╔══██╗██╔════╝██╔══██╗██╔════╝██╔═══██╗████╗  ██║██╔══██╗██║               ║', 'system');
+      await commander('echo ║   ██████╔╝█████╗  ██████╔╝███████╗██║   ██║██╔██╗ ██║███████║██║               ║', 'system');
+      await commander('echo ║   ██╔═══╝ ██╔══╝  ██╔══██╗╚════██║██║   ██║██║╚██╗██║██╔══██║██║               ║', 'system');
+      await commander('echo ║   ██║     ███████╗██║  ██║███████║╚██████╔╝██║ ╚████║██║  ██║███████╗          ║', 'system');
+      await commander('echo ║   ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝  ╚═╝╚══════╝          ║', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ║     ██████╗██╗   ██╗                                                           ║', 'system');
+      await commander('echo ║    ██╔════╝██║   ██║                                                           ║', 'system');
+      await commander('echo ║    ██║     ██║   ██║                                                           ║', 'system');
+      await commander('echo ║    ██║     ╚██╗ ██╔╝                                                           ║', 'system');
+      await commander('echo ║    ╚██████╗ ╚████╔╝                                                            ║', 'system');
+      await commander('echo ║     ╚═════╝  ╚═══╝                                                             ║', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ╠════════════════════════════════════════════════════════════════════════════════╣', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ║                    👨‍💻 SENIOR SOFTWARE ENGINEER                                ║', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ║           🌟 ALEKSANDR CHERNUSHEVICH | 15+ YEARS EXPERIENCE                     ║', 'system');
+      await commander('echo ║           🚀 REACT • ANGULAR • SCALA • TYPESCRIPT • NODE.JS                     ║', 'system');
+      await commander('echo ║           🌎 AGODA | EX-LUXOFT | EX-IBM | INTERNATIONAL                         ║', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ╠════════════════════════════════════════════════════════════════════════════════╣', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ║   💡 Welcome to my interactive portfolio terminal!                              ║', 'system');
+      await commander('echo ║   📖 Type "help" to explore available commands                                    ║', 'system');
+      await commander('echo ║   🎮 Try "games" (guess | quiz) for fun interactive commands                      ║', 'system');
+      await commander('echo ║   🔍 Use "about" to learn more about my experience                                ║', 'system');
+      await commander('echo ║   📧 Use "contact" to get in touch                                                ║', 'system');
+      await commander('echo ║                                                                                ║', 'system');
+      await commander('echo ╚════════════════════════════════════════════════════════════════════════════════╝', 'system');
     })();
   }, [commander]);
 
