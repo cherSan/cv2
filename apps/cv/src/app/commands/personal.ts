@@ -86,24 +86,24 @@ export const personal = {
       await term.echo('');
 
       await term.echo('💻 FRONTEND MASTERY:');
-      await term.echo('   • Frameworks:    React, Angular, Vue.js');
-      await term.echo('   • Mobile:        React Native, Ionic, iOS/Android WebKit');
-      await term.echo('   • Desktop:       Electron, NW.js');
+      await term.echo('   • Frameworks:    React, Angular, Vue.js, ...');
+      await term.echo('   • Mobile:        React Native, Ionic, iOS/Android WebKit, NativeScript, Capacitor, Expo');
+      await term.echo('   • Desktop:       Electron, Glue42');
       await term.echo('   • Languages:     TypeScript, JavaScript, HTML5, CSS3');
-      await term.echo('   • State Mgmt:    Redux, NgRx, MobX, Context API');
-      await term.echo('   • Styling:       Tailwind CSS, Material-UI, Bootstrap, SASS');
+      await term.echo('   • State Mgmt:    Redux, NgRx, MobX, Context API (React), Zustand, ...');
+      await term.echo('   • Styling:       Tailwind CSS, Material-UI, Bootstrap, SASS/SCSS, Less, Ant Design, ...');
       await term.echo('');
 
       await term.echo('⚙️ BACKEND EXPERTISE:');
       await term.echo('   • JVM Stack:     Scala, Kotlin, Java');
-      await term.echo('   • Node.js:       NestJS, Express, Fastify');
-      await term.echo('   • API:           GraphQL, REST, gRPC, WebSocket');
-      await term.echo('   • Databases:     PostgreSQL, MySQL, MongoDB, Redis');
+      await term.echo('   • Node.js:       NestJS, Express, Fastify, NextJS');
+      await term.echo('   • API:           GraphQL, REST, gRPC, WebSocket, ...');
+      await term.echo('   • Databases:     PostgreSQL, MySQL, MongoDB, Redis, ...');
       await term.echo('   • Messaging:     Kafka, RabbitMQ, AWS SQS');
       await term.echo('');
 
       await term.echo('🏗️ ARCHITECTURE & DEVOPS:');
-      await term.echo('   • Microfrontends: Nx, Module Federation, Single-SPA');
+      await term.echo('   • MicroFrontends: Nx, Module Federation, Single-SPA');
       await term.echo('   • Containers:     Docker, Kubernetes, Podman');
       await term.echo('   • Cloud:          AWS, GCP, Azure, IBM Cloud');
       await term.echo('   • CI/CD:          GitLab CI/CD, Jenkins, GitHub Actions');
@@ -114,7 +114,7 @@ export const personal = {
       await term.echo('🛠️ DEVELOPMENT TOOLS:');
       await term.echo('   • Build Tools:    Webpack, Vite, Rollup, Gradle');
       await term.echo('   • Testing:        Jest, Cypress, Testing Library, JUnit');
-      await term.echo('   • Version Control: Git, GitHub, GitLab, Bitbucket');
+      await term.echo('   • Version Control:Git, GitHub, GitLab, Bitbucket');
       await term.echo('   • IDEs:           IntelliJ IDEA, VS Code, WebStorm');
       await term.echo('   • Collaboration:  Jira, Confluence, Slack, Teams');
       await term.echo('');
@@ -128,7 +128,7 @@ export const personal = {
 
       await term.echo('🗣️ LANGUAGES:');
       await term.echo('   • Russian:       Native proficiency');
-      await term.echo('   • English:       Professional working proficiency - B2 IELTS Confirmed (International English Language Testing System)');
+      await term.echo('   • English:       Professional working proficiency - B2 IELTS Confirmed');
       await term.echo('   • German:        Elementary proficiency (A2)');
       await term.echo('   • Spanish:       Elementary proficiency (A2)');
       await term.echo('');
